@@ -7,6 +7,7 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(5);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Fetch users from API when component mounts
@@ -16,7 +17,9 @@ const UserTable = () => {
         setUsers(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching users:", error);
+        setError(
+          "An error occurred while fetching data.Please try after sometime..."
+        );
       });
   }, []);
 
@@ -42,19 +45,26 @@ const UserTable = () => {
           </tr>
         </thead>
         <tbody>
-          {currentUsers.map((users) => (
-            <tr key={users.id}>
-              <td>{users.id}</td>
-              <td>{users.name.split(" ")[0]}</td>
-              <td>{users.name.split(" ")[1]}</td>
-              <td>{users.email}</td>
-              <td>{users.company.name}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
+          {error ? (
+            <tr>
+              <td colSpan="6">{error}</td>
             </tr>
-          ))}
+          ) : (
+            currentUsers.map((users) => (
+              <tr key={users.id}>
+                <td>{users.id}</td>
+                <td>{users.name.split(" ")[0]}</td>
+                <td>{users.name.split(" ")[1]}</td>
+                <td>{users.email}</td>
+                <td>{users.company.name}</td>
+                <td>
+                  <button className={styles.actionButton}>Edit</button>
+                  <span style={{ marginLeft: "30px" }}></span>
+                  <button className={styles.actionButton}>Delete</button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
       <Pagination

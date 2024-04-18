@@ -14,12 +14,12 @@ const HeaderSearch = () => {
           <input
             className={styles.search}
             type="text"
-            placeholder="placeholder"
+            placeholder="Search by name , email..."
           ></input>
           <button className={styles.searchButton}>Search</button>
         </div>
         <div>
-          <button className={styles.searchButton}>➕Add New User</button>
+          <button className={styles.searchButton}>➕ Add New User</button>
         </div>
       </div>
     </div>
