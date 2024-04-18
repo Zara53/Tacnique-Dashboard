@@ -1,0 +1,23 @@
+.container {
+  overflow-x: auto;
+}
+
+table {
+  margin-top: 10px;
+  color: var(--color-black);
+  width: 100%;
+  border: 2px solid var(--color-primary);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

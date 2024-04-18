@@ -1,0 +1,23 @@
+.header {
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.searchBox {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  height: 40px;
+  border: 2px solid var(--color-primary);
+}
+
+.searchButton {
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
