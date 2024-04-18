@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./UserTable.module.css";
+import Pagination from "../Pagination/Pagination";
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(5);
 
   useEffect(() => {
     // Fetch users from API when component mounts
@@ -16,6 +19,14 @@ const UserTable = () => {
         console.error("Error fetching users:", error);
       });
   }, []);
+
+  // Logic to get current users
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className={styles.container}>
@@ -31,7 +42,7 @@ const UserTable = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((users) => (
+          {currentUsers.map((users) => (
             <tr key={users.id}>
               <td>{users.id}</td>
               <td>{users.name.split(" ")[0]}</td>
@@ -46,6 +57,11 @@ const UserTable = () => {
           ))}
         </tbody>
       </table>
+      <Pagination
+        users={users}
+        usersPerPage={usersPerPage}
+        paginate={paginate}
+      />
     </div>
   );
 };
