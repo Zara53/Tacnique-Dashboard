@@ -2,7 +2,7 @@
   list-style-type: none;
   padding: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .pagination button {
-  padding: 12px 16px;
+  padding: 10px 14px;
   border: 2px solid var(--color-primary);
   background-color: transparent;
   color: var(--color-black);
@@ -21,4 +21,21 @@
 .pagination button:hover {
   background-color: var(--color-primary);
   color: white;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .pagination {
+    justify-content: center; /* Center pagination items on small screens */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  }
+
+  .pagination li {
+    margin: 5px; /* Adjust margin for better spacing on small screens */
+  }
+
+  .pagination button {
+    padding: 8px 12px; /* Further reduced padding for smaller buttons */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 }

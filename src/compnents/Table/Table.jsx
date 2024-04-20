@@ -42,6 +42,72 @@ const Table = ({ currentUsers, error, users, setUsers }) => {
 
   return (
     <div className={styles.container}>
+      {editingUser && (
+        <div>
+          <h2 className={styles.editUser}>Edit User</h2>
+          <input
+            className={styles.input}
+            type="text"
+            value={editingUser.id}
+            onChange={(e) =>
+              setEditingUser({ ...editingUser, id: e.target.value })
+            }
+          />
+          <input
+            className={styles.input}
+            type="text"
+            value={editingUser.name ? editingUser.name.split(" ")[0] : ""}
+            onChange={(e) =>
+              setEditingUser({
+                ...editingUser,
+                name:
+                  e.target.value +
+                  " " +
+                  (editingUser.name ? editingUser.name.split(" ")[1] : ""),
+              })
+            }
+          />
+          <input
+            className={styles.input}
+            type="text"
+            value={editingUser.name ? editingUser.name.split(" ")[1] : ""}
+            onChange={(e) =>
+              setEditingUser({
+                ...editingUser,
+                name:
+                  (editingUser.name ? editingUser.name.split(" ")[0] : "") +
+                  " " +
+                  e.target.value,
+              })
+            }
+          />
+          <input
+            className={styles.input}
+            type="text"
+            value={editingUser.email}
+            onChange={(e) =>
+              setEditingUser({ ...editingUser, email: e.target.value })
+            }
+          />
+          <input
+            className={styles.input}
+            type="text"
+            value={editingUser.company.name}
+            onChange={(e) =>
+              setEditingUser({
+                ...editingUser,
+                company: { ...editingUser.company, name: e.target.value },
+              })
+            }
+          />
+          <button
+            className={styles.updateButton}
+            onClick={() => handleUpdateUser(editingUser)}
+          >
+            Update
+          </button>
+        </div>
+      )}
       <table>
         <thead>
           <tr>
@@ -86,62 +152,6 @@ const Table = ({ currentUsers, error, users, setUsers }) => {
           )}
         </tbody>
       </table>
-      {editingUser && (
-        <div>
-          <h2 className={styles.editUser}>Edit User</h2>
-          <input
-            type="text"
-            value={editingUser.id}
-            onChange={(e) =>
-              setEditingUser({ ...editingUser, id: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={editingUser.name ? editingUser.name.split(" ")[0] : ""}
-            onChange={(e) =>
-              setEditingUser({
-                ...editingUser,
-                name:
-                  e.target.value +
-                  " " +
-                  (editingUser.name ? editingUser.name.split(" ")[1] : ""),
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editingUser.name ? editingUser.name.split(" ")[1] : ""}
-            onChange={(e) =>
-              setEditingUser({
-                ...editingUser,
-                name:
-                  (editingUser.name ? editingUser.name.split(" ")[0] : "") +
-                  " " +
-                  e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editingUser.email}
-            onChange={(e) =>
-              setEditingUser({ ...editingUser, email: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            value={editingUser.company.name}
-            onChange={(e) =>
-              setEditingUser({
-                ...editingUser,
-                company: { ...editingUser.company, name: e.target.value },
-              })
-            }
-          />
-          <button onClick={() => handleUpdateUser(editingUser)}>Update</button>
-        </div>
-      )}
     </div>
   );
 };

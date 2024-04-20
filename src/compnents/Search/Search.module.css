@@ -1,18 +1,19 @@
 .searchBox {
-  padding: 20px;
+  padding: 10px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  flex-direction: column;
 }
 
 .search {
-  height: 50px;
-  font-size: larger;
+  height: 40px;
+  font-size: medium;
   border: 2px solid var(--color-primary);
 }
 
 .searchButton {
-  height: 50px;
-  font-size: larger;
+  height: 40px;
+  font-size: medium;
   background-color: var(--color-primary);
   color: var(--color-white);
 }
@@ -23,7 +24,7 @@
 }
 
 .form {
-  margin-top: 70px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,13 +32,14 @@
 
 .formRow {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
 input[type="text"] {
   padding: 8px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -49,5 +51,35 @@ input[type="text"] {
 
 .saveCancel {
   display: flex;
-  gap: 80px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .searchBox {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items horizontally on small screens */
+  }
+
+  .search,
+  .searchButton {
+    width: 100%; /* Make search input and button full width on small screens */
+  }
+
+  .form {
+    margin-top: 30px; /* Further reduced margin for better spacing on small screens */
+  }
+
+  .formRow {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Make input field full width on small screens */
+  }
+
+  .saveCancel {
+    gap: 10px; /* Further reduced gap for better spacing on small screens */
+  }
 }

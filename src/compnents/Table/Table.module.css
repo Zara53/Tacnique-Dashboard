@@ -12,7 +12,7 @@ table {
 
 th,
 td {
-  padding: 20px;
+  padding: 10px;
   text-align: left;
   border-bottom: 2px solid var(--color-primary);
 }
@@ -23,7 +23,8 @@ th {
 }
 
 .actionButton {
-  padding: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 .actionButton:hover {
@@ -32,6 +33,39 @@ th {
 }
 
 .editUser {
-  margin-top: 20px;
+  margin-left: 10px;
   color: var(--color-primary);
+}
+
+.updateButton {
+  padding: 7px;
+  margin-left: 10px;
+}
+
+.updateButton:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.input {
+  margin-left: 10px;
+  border: 2px solid var(--color-primary);
+}
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  td,
+  th {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .actionButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .editUser {
+    margin-top: 5px;
+    font-size: 12px;
+  }
 }

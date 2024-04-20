@@ -6,12 +6,30 @@
 
 .headerView button {
   margin-top: 50px;
-  margin-left: 80px;
-  font-size: 30px;
+  margin-left: 10px;
+  font-size: 20px;
   padding: 10px;
 }
 
 .headerView button:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .headerView {
+    text-align: center;
+  }
+
+  .headerView h1 {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .headerView button {
+    margin-top: 20px;
+    margin-left: 0;
+    font-size: 20px;
+  }
 }

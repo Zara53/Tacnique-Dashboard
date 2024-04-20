@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import styles from "./UserTable.module.css";
 import Pagination from "../Pagination/Pagination";
 import Search from "../Search/Search";
 import Table from "../Table/Table";
