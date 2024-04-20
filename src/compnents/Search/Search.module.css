@@ -62,7 +62,7 @@ input[type="text"] {
 
   .search,
   .searchButton {
-    gap: 10px;
+    margin-bottom: 10px;
     width: 100%;
   }
 

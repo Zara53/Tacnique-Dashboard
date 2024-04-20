@@ -62,7 +62,7 @@ th {
   .actionButton {
     padding: 6px 10px;
     font-size: 12px;
-    gap: 10px;
+    margin-bottom: 10px;
   }
 
   .editUser {
