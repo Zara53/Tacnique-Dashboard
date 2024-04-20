@@ -23,6 +23,14 @@ This is a simple user management system built with React. It allows users to vie
    npm start
 2. Open your browser and go to http://localhost:3000 to view the app.
 
+## Deployment with Netlify
+You can easily deploy this app to Netlify for free.
+1. Sign up for a free Netlify account if you don't have one.
+2. Connect Github with Netlify.
+3. Choose the Github repository to deploy.
+4. Add the name.
+5. Once deployed, you will receive a URL where your app is hosted.
+
 ## Technologies Used
 1. React
 2. Axios
