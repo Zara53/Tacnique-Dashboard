@@ -1,0 +1,17 @@
+.headerView h1 {
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.headerView button {
+  margin-top: 50px;
+  margin-left: 80px;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.headerView button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

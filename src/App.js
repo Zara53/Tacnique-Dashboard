@@ -1,39 +1,19 @@
-import React from "react";
-import Header from "./compnents/Header/HeaderSearch.jsx";
+import React, { useState } from "react";
+import Header from "./compnents/Header/Header.jsx";
 import UserTable from "./compnents/UserTable/UserTable.jsx";
+
 const App = () => {
+  const [showUserTable, setShowUserTable] = useState(false);
+
+  const toggleUserTable = () => {
+    setShowUserTable(!showUserTable);
+  };
   return (
-    <div>
-      <Header />
-      <UserTable />
-    </div>
+    <>
+      <Header onToggleUserTable={toggleUserTable} />
+      {showUserTable && <UserTable />}
+    </>
   );
 };
 
 export default App;
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

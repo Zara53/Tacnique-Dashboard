@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./UserTable.module.css";
+// import styles from "./UserTable.module.css";
 import Pagination from "../Pagination/Pagination";
+import Search from "../Search/Search";
+import Table from "../Table/Table";
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
@@ -23,6 +25,19 @@ const UserTable = () => {
       });
   }, []);
 
+  // Function to add a new user
+  const handleAddUser = async (newUser) => {
+    try {
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/users",
+        newUser
+      );
+      setUsers((prevUsers) => [...prevUsers, response.data]); // Update state based on previous state
+    } catch (error) {
+      console.error("Error adding user:", error);
+    }
+  };
+
   // Logic to get current users
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
@@ -32,41 +47,14 @@ const UserTable = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className={styles.container}>
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Department</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {error ? (
-            <tr>
-              <td colSpan="6">{error}</td>
-            </tr>
-          ) : (
-            currentUsers.map((users) => (
-              <tr key={users.id}>
-                <td>{users.id}</td>
-                <td>{users.name.split(" ")[0]}</td>
-                <td>{users.name.split(" ")[1]}</td>
-                <td>{users.email}</td>
-                <td>{users.company.name}</td>
-                <td>
-                  <button className={styles.actionButton}>Edit</button>
-                  <span style={{ marginLeft: "30px" }}></span>
-                  <button className={styles.actionButton}>Delete</button>
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+    <div>
+      <Search onAddUser={handleAddUser} />
+      <Table
+        currentUsers={currentUsers}
+        error={error}
+        users={users}
+        setUsers={setUsers}
+      />
       <Pagination
         users={users}
         usersPerPage={usersPerPage}

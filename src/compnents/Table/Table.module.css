@@ -23,13 +23,15 @@ th {
 }
 
 .actionButton {
-  cursor: pointer;
   padding: 10px;
-  border: 2px solid var(--color-primary);
-  background-color: var(--color-white);
 }
 
 .actionButton:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+.editUser {
+  margin-top: 20px;
+  color: var(--color-primary);
 }
