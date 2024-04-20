@@ -26,16 +26,16 @@
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .pagination {
-    justify-content: center; /* Center pagination items on small screens */
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .pagination li {
-    margin: 5px; /* Adjust margin for better spacing on small screens */
+    margin: 5px;
   }
 
   .pagination button {
-    padding: 8px 12px; /* Further reduced padding for smaller buttons */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 12px;
+    font-size: 14px;
   }
 }

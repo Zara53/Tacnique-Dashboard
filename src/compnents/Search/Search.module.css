@@ -1,7 +1,6 @@
 .searchBox {
   padding: 10px;
   display: flex;
-  /* justify-content: space-between; */
   flex-direction: column;
 }
 
@@ -38,7 +37,6 @@
 
 input[type="text"] {
   padding: 8px;
-  /* margin-right: 10px; */
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -58,28 +56,28 @@ input[type="text"] {
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .searchBox {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center items horizontally on small screens */
+    flex-direction: column;
+    align-items: center;
   }
 
   .search,
   .searchButton {
-    width: 100%; /* Make search input and button full width on small screens */
+    width: 100%;
   }
 
   .form {
-    margin-top: 30px; /* Further reduced margin for better spacing on small screens */
+    margin-top: 30px;
   }
 
   .formRow {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column;
   }
 
   input[type="text"] {
-    width: 100%; /* Make input field full width on small screens */
+    width: 100%;
   }
 
   .saveCancel {
-    gap: 10px; /* Further reduced gap for better spacing on small screens */
+    gap: 10px;
   }
 }

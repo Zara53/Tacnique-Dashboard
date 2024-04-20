@@ -49,12 +49,10 @@ const Search = ({ onAddUser, onSearchChange }) => {
         <button className={styles.searchButton}>Search</button>
       </div>
       <div className={styles.addButtonContainer}>
-        {/* Button to toggle the form */}
         <button className={styles.searchButton} onClick={handleAddUserClick}>
           ➕ Add New User
         </button>
       </div>
-      {/* Render the form if showForm is true */}
       {showForm && (
         <div className={styles.form}>
           <div className={styles.formRow}>

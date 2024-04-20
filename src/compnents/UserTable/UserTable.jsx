@@ -11,7 +11,7 @@ const UserTable = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch users from API when component mounts
+    // Fetch users from API
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
